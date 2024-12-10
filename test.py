@@ -1,0 +1,18 @@
+# data = [0x0, 0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9, 0xA, 0xB, 0xC, 0xD, 0xE, 0xF, ]
+data = [0x0, 0x4, 0x8, 0xC, 0x1, 0x5, 0x9, 0xD, 0x2, 0x6, 0xA, 0xE, 0x3, 0x7, 0xB, 0xF, ]
+# matrix = [[data[row + col * 4] for col in range(4)] for row in range(4)]
+
+# for i in range(4):
+#    matrix[i] = matrix[i][i:] + matrix[i][:i]
+
+# a = [matrix[row][col] for col in range(4) for row in range(4)]
+
+# print(data)
+# print(a)
+
+# [0, 4, 8, 12, 1, 5, 9, 13, 2, 6, 10, 14, 3, 7, 11, 15]
+# [0, 5, 10, 15, 1, 6, 11, 12, 2, 7, 8, 13, 3, 4, 9, 14]
+for i in range(4):
+    data[i::4] = data[i::4][i:] + data[i::4][:i]
+
+print(data)
